@@ -9,9 +9,9 @@ class App extends React.Component {
         };
     }
     componentDidMount() {
-        fetch("http://127.0.0.1:8000/api/Shoe/?format=json")
+        fetch("http://127.0.0.1:8000/api/Shoe/")
             .then((res) => res.json())
-            .then((data) => this.setState({ shoes: data.id }));
+            .then((data) => this.setState({ shoes: data }));
     }
 
     render() {
@@ -23,10 +23,10 @@ class App extends React.Component {
                         <li>size: {s.size}</li>
                         <li>brand name: {s.brand_name}</li>
                         <li>manufacturer: {s.manufacturer}</li>
-                        <li>color: {s.color}</li>
+                        <li>color: {s.color_name}</li>
                         <li>material: {s.material}</li>
                         <li>shoe type: {s.shoe_type}</li>
-                        <li>fasten type: {s.fasten_type}</li>
+                        <li>fasten type: {s.fasten_style}</li>
                     </ul>
                 ))}
             </div>
